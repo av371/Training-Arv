@@ -1,0 +1,14 @@
+create table accidents(states varchar,in2008 int,in2009 int,in2010 int,in2011 int,in2012 int,in2013 int,in2014 int,in2015 int)
+copy accidents from '/home/user/accidents.csv' delimiter ',' csv;
+
+create table topthree(top2008,top2009,top2010,top2011,top2012,top2013,top2014,top2015)
+
+insert into topthree(top2008) select states from accidents order by in2008 desc limit 3
+insert into topthree(top2009) select states from accidents order by in2009 desc limit 3
+insert into topthree(top2010) select states from accidents order by in2010 desc limit 3
+insert into topthree(top2011) select states from accidents order by in2011 desc limit 3
+insert into topthree(top2012) select states from accidents order by in2012 desc limit 3
+insert into topthree(top2013) select states from accidents order by in2013 desc limit 3
+insert into topthree(top2014) select states from accidents order by in2014 desc limit 3
+insert into topthree(top2015) select states from accidents order by in2015 desc limit 3
+
