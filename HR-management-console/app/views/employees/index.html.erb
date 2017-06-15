@@ -1,0 +1,18 @@
+
+<!-- <h1>Peoples In The List</h1>
+<ul>
+	<% for i in 0...@names.size %>
+	<li>
+		<a href = "/employees/<%=i%>"><%= @names[i][:name].titleize%></a>
+	</li>
+	<% end%>
+</ul> -->
+
+<h1>Peoples In The List</h1>
+<ul>
+	<% @names.each do |firstname| %>
+	<li>
+		<a href = "/employees/<%=firstname[:id]%>"><%=firstname[:name].titleize%></a>
+	</li>
+	<% end%>
+</ul>
